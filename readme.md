@@ -13,7 +13,7 @@ Het project is online te vinden op netlify: mjwebshop.netlify.app
 ## Project
 
 Het project is een webshop.
-Functies zijn een winkelwagen, actueel voorraadbeheer, 
+Functies zijn een winkelwagen, actueel voorraadbeheer, administratiepagina
 
 ## Certificaat
 
