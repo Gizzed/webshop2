@@ -42,7 +42,7 @@
                     <div class="d-flex ">
                         <ul class="navbar-nav">
                             <!-- Icons -->
-                            <li class="nav-item  " id="">
+                            <li class="nav-item">
                                 <a class="nav-link" href="admin/admin.html">
                                     <h5 class="text-white">
                                         <i class="bi bi-person-circle" data-bs-toggle="tooltip"
@@ -59,7 +59,6 @@
                                         <i class="bi bi-house position-relative" data-bs-toggle="tooltip"
                                             data-bs-placement="right" data-bs-custom-class="custom-tooltip"
                                             data-bs-title="Home">
-                                            </span>
                                         </i>
                                     </h4>
                                 </a>
@@ -70,11 +69,10 @@
                                         <i class="bi bi-cart3 position-relative" data-bs-toggle="tooltip"
                                             data-bs-placement="right" data-bs-custom-class="custom-tooltip"
                                             data-bs-title="cart">
-                                            <h6><span
-                                                    class="badge bg-danger hide position-absolute top-0 start-100 translate-middle">0</span>
+                                            <h6><span>
+                                                    class="badge bg-danger hide position-absolute top-0 start-100
+                                                    translate-middle">0</span>
                                             </h6>
-
-                                            </span>
                                         </i>
                                     </h4>
                                 </a>
@@ -111,26 +109,26 @@
             <div class="" id="totaalprijs"></div>
 
             <div class="d-flex">
-                <a href="index.html"><button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Verder
-                        shoppen</button></a>
-                <a class="nav-link" href="#" rel="nofollow" data-bs-toggle="modal"
-                    data-bs-target="#winkelwagenModal"><button type="button" class="btn btn-primary hide m-1"
-                        id="purchaseButton">Kopen</button> </a>
+                <button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal"><a href="index.html">Verder
+                        shoppen</a></button>
+                <button type="button" class="btn btn-primary hide m-1" id="purchaseButton"><a class="nav-link" href="#" rel="nofollow"
+                        data-bs-toggle="modal" data-bs-target="#winkelwagenModal">Kopen</a></button>
             </div>
         </div>
 
         <hr class="my-5 hr hr-blurry" />
 
-        </div>
+
     </main>
     <!--Main layout-->
     <!--Footer-->
     <!-- Copyright -->
-    <div class="text-center bg-primary bg-gradient p-3 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright
-        <a class="text-dark" href="#"></a>
-    </div>
-    <!-- Copyright -->
+    <footer>
+        <div class="text-center bg-primary bg-gradient p-3 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright
+            <a class="text-dark" href="#"></a>
+        </div>
+        <!-- Copyright -->
     </footer>
 
 
@@ -150,6 +148,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="bestelKnop">OK</button>
+                        </div>
                 </form>
             </div>
         </div>
