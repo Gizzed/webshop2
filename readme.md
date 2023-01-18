@@ -8,7 +8,7 @@ Kopiëer de bestanden naar lokale schijf en open index.html
 
 ## Online
 
-Het project is online te vinden op netlify:
+Het project is online te vinden op netlify: mjwebshop.netlify.app
 
 ## Project
 
