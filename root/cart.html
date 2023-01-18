@@ -1,0 +1,168 @@
+<!--Main Navigation-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="../js/script2.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>MJ's Webshop Cart</title>
+
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-primary bg-gradient fixed-top">
+            <div class="container justify-content-between">
+                <div class="d-flex m-2">
+                    <strong class="text-white navbar-brand nav-link">MJ's Webshop Cart</strong>
+                </div>
+                <div class="d-flex m-2">
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        class="navbar-toggler bg-white " aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class=" collapse navbar-collapse flex-grow-0 w-100 justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                    </ul>
+                    <div class="d-flex ">
+                        <ul class="navbar-nav">
+                            <!-- Icons -->
+                            <li class="nav-item  " id="">
+                                <a class="nav-link" href="../root/admin/admin.html">
+                                    <h5 class="text-white">
+                                        <i class="bi bi-person-circle" data-bs-toggle="tooltip"
+                                            data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="admin">
+
+                                        </i>
+                                    </h5>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../root/index.html">
+                                    <h4 class="text-white">
+                                        <i class="bi bi-house position-relative" data-bs-toggle="tooltip"
+                                            data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Home">
+                                            </span>
+                                        </i>
+                                    </h4>
+                                </a>
+                            </li>
+                            <li class="nav-item  " id="winkelwagen">
+                                <a class="nav-link" href="#">
+                                    <h4 class="text-white">
+                                        <i class="bi bi-cart3 position-relative" data-bs-toggle="tooltip"
+                                            data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="cart">
+                                            <h6><span
+                                                    class="badge bg-danger hide position-absolute top-0 start-100 translate-middle">0</span>
+                                            </h6>
+
+                                            </span>
+                                        </i>
+                                    </h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <hr class="my-5 hr hr-blurry" />
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h5 class="" id="winkelwagenLabel">Winkelwagen</h5>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <h3><i class="bi bi-trash3 hide m-1" id="clearcart" onmouseover="" data-bs-toggle="tooltip"
+                            data-bs-placement="right" data-bs-custom-class="custom-tooltip"
+                            data-bs-title="Leeg winkelwagen"></i></h3>
+                </div>
+                <hr class="my-5 hr hr-blurry" />
+
+            </div>
+            <div class="container" id="shoppingCart">
+            </div>
+            <!-- inhoud winkelwagen via js-->
+
+            <div class="" id="totaalprijs"></div>
+
+            <div class="d-flex">
+                <a href="index.html"><button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Verder
+                        shoppen</button></a>
+                <a class="nav-link" href="#" rel="nofollow" data-bs-toggle="modal"
+                    data-bs-target="#winkelwagenModal"><button type="button" class="btn btn-primary hide m-1"
+                        id="purchaseButton">Kopen</button> </a>
+            </div>
+        </div>
+
+        <hr class="my-5 hr hr-blurry" />
+
+        </div>
+    </main>
+    <!--Main layout-->
+    <!--Footer-->
+    <!-- Copyright -->
+    <div class="text-center bg-primary bg-gradient p-3 fixed-bottom" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright
+        <a class="text-dark" href="#"></a>
+    </div>
+    <!-- Copyright -->
+    </footer>
+
+
+    <div class="modal fade" id="winkelwagenModal" tabindex="-1" aria-labelledby="winkelwagenModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="winkelwagenModalLabel">Bestelling geplaatst</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <!-- gekocht winkelwagen via js-->
+                        <h1>Op welke naam kan deze bestelling gezet worden?</h1>
+                        <input type="text" id="bestelNaam" aria-required="true" placeholder="Minimaal 4 letters">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="bestelKnop">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+
+</html>

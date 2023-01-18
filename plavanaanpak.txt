@@ -1,0 +1,31 @@
+Plan van aanpak Webshop
+
+
+Wat voor webshop ga je maken?
+ Ik ga een webshop maken voor pizza producten. Te beginnen met pizzabloem.
+
+Welke functionaliteiten biedt jouw webshop?: 
+ Winkelwagen opslaan
+ Overzicht van producten
+ Verwijderen van producten uit winkelwagen
+ Voorraad management
+ Bestelling bevestigen en opslaan
+
+Hoe gaat je webshop eruit zien?
+ Om te beginnen een eenvoudige navbar
+ Winkelwagen icoontje
+ Notificaties en aantallen bij toevoegen aanwinkelwagen
+ Bootstrap cards voor producten overzicht
+ Administratie gedeelte: Overzichten van producten en bestellingen. Bewerken van productoverzicht.
+ Rekening houden met de functionele eisen van de opdracht
+
+De niet-functionele eisen toepassen.
+
+Ik zal veel moeten googlen omdat mijn kennis nog onvoldoende is om dit met de geleerde lesstof te ontwikkelen.
+Daarom is het onbekend hoeveel tijd ik hiervoor nodig ga hebben.
+
+
+ 
+ 
+
+
