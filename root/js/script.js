@@ -37,7 +37,7 @@ function createItem(parsedData) {
 `;
         const shoppingItems = document.createElement('div');
         shoppingItems.classList = `col-lg-4 col-md-12 mb-4 shop-item`;
-        shoppingItems.innerHTML = shoppingItemscontent
+        shoppingItems.innerHTML = shoppingItemscontent;
         document.getElementById("appendHere").append(shoppingItems);
         reloadButtons();
     }
@@ -54,7 +54,7 @@ function reloadButtons() {
     const addCartbuttons = document.getElementsByClassName('add');
     for (let i = 0; i < addCartbuttons.length; i++) {
         const button = addCartbuttons[i];
-        button.addEventListener('click', addCart)
+        button.addEventListener('click', addCart);
     }
 }
 
@@ -75,14 +75,15 @@ function adjustElements() {
     const parsedData = JSON.parse(localStorage.getItem('winkelwagen'));
     for (const e of parsedData) {
         const adjustElementsItem = document.getElementById('b' + e.id);
-        adjustElementsItem.innerHTML = `<span class="position-absolute top-0 start-200 translate-middle"><h1><i class="bi text-success bi-check"></i></h1></span>toegevoegd aan winkelwagen`;
+        adjustElementsItem.innerHTML = `<span class="position-absolute top-0 start-200 translate-middle">
+        <h1><i class="bi text-success bi-check"></i></h1></span>toegevoegd aan winkelwagen`;
         adjustElementsItem.removeEventListener('click', addCart);
         const adjustElementsItemV = document.getAnimations('v' + e.id);
         adjustElementsItemV.innerText = e.amount;
     }
 }
 
-//voegt product toe aan winkelwagen
+// voegt product toe aan winkelwagen
 function addCart(event) {
     const addButton = event.target;
     const shopItem = addButton.parentElement;
@@ -102,13 +103,12 @@ function addCart(event) {
     adjustElements();
 }
 
-//geeft notificatie in badge voor toegevoegde producten
+// geeft notificatie in badge voor toegevoegde producten
 function checkcartNotification() {
     const aantal = JSON.parse(localStorage.getItem('winkelwagen'));
     if (aantal != null && aantal.length > 0) {
         document.getElementsByClassName('badge')[0].classList.remove('hide');
         document.getElementsByClassName('badge')[0].innerHTML = aantal.length;
-
     } else {
         document.getElementsByClassName('badge')[0].classList.add('hide');
         document.getElementById('purchaseButton').classList.add('hide');

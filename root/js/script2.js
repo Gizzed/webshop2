@@ -1,10 +1,9 @@
 if ("winkelwagen" in localStorage == true) {
-    const localstoragearray = JSON.parse(localStorage.getItem('winkelwagen'))
+    const localstoragearray = JSON.parse(localStorage.getItem('winkelwagen'));
     console.log('U heeft nog producten in uw winkelwagen');
     for (const w of localstoragearray) {
         createCart(w);
         checkcartNotification();
-
     }
 }
 // notificatie badge aanpassingen
@@ -15,15 +14,12 @@ function checkcartNotification() {
         document.getElementById('purchaseButton').classList.remove('hide');
         document.getElementById('clearcart').classList.remove('hide');
         document.getElementsByClassName('badge')[0].innerHTML = aantal.length;
-
     } else {
         document.getElementsByClassName('badge')[0].classList.add('hide');
         document.getElementById('purchaseButton').classList.add('hide');
         document.getElementById('clearcart').classList.add('hide');
     }
-
 }
-
 document.getElementById("clearcart").addEventListener("click", clearCart);
 document.getElementById('purchaseButton').addEventListener('click', bestelNaam);
 document.getElementById("bestelNaam").addEventListener('change', () => {
@@ -44,7 +40,7 @@ function imgSrc(winkelwagen) {
     }
 }
 
-//vooraad ophalen
+// vooraad ophalen
 function getAmount(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
@@ -55,7 +51,7 @@ function getAmount(winkelwagen) {
     }
 }
 
-//- knop in winkelwagen
+// - knop in winkelwagen
 function minButtonclicked(w) {
     const parsedData = JSON.parse(localStorage.getItem('winkelwagen'));
     for (const v of parsedData) {
@@ -71,7 +67,7 @@ function minButtonclicked(w) {
     }
 }
 
-//+ knop in winkelwagen
+// + knop in winkelwagen
 function addButtonclicked(w, amount) {
     const parsedData = JSON.parse(localStorage.getItem('winkelwagen'));
     for (const v of parsedData) {
@@ -87,33 +83,38 @@ function addButtonclicked(w, amount) {
     }
 }
 
-//html winkelwagen creëeren
+// html winkelwagen creëeren
 function createCart(winkelwagen) {
     const src = imgSrc(winkelwagen);
     const amount = getAmount(winkelwagen);
     const inCartdiv = document.createElement("div");
     inCartdiv.classList = "row d-flex p-3 ";
-    inCartcontent = `
+    const inCartcontent = `
     <p class="hide">${winkelwagen.id}</p>
                 <div class="col-12 col-lg-2 mb-2"><h4 class="cartItem-title">${winkelwagen.name}</h4></div>
-                <div class="col-4 col-lg-2 d-flex"><img src="${src}" class="object-fit-cover border rounded" alt="..." width="50" height="60"> </div>
+                <div class="col-4 col-lg-2 d-flex"><img src="${src}" class="object-fit-cover border rounded" 
+                alt="..." width="50" height="60"> </div>
                 <div class="col-4 col-lg-2"><h6 class="cartItem-prijs">Prijs: €${winkelwagen.prijs}</h6></div>    
-                <div class="col-6 col-lg-2"><h6 id="a${winkelwagen.id}">Aantal: ${winkelwagen.aantal}</h6><i>(Op voorraad: ${amount})</i></div>    
-                <div class="col-6 col-lg-2"><span id="ta${winkelwagen.id}">Totaal: €${winkelwagen.prijs * winkelwagen.aantal}</span></div>                   
+                <div class="col-6 col-lg-2"><h6 id="a${winkelwagen.id}">Aantal: ${winkelwagen.aantal}</h6><i>
+                (Op voorraad: ${amount})</i></div>    
+                <div class="col-6 col-lg-2"><span id="ta${winkelwagen.id}">Totaal: €${winkelwagen.prijs * winkelwagen.aantal}
+                </span></div>                   
                 <div class="col-6 col-lg-2"><h4><i class="bi bi-trash3 rem m-1"></i></h4></div>                  
                 <div class="d-flex col-12 mt-2 justify-content-start">  
-                <button type="button" onclick="minButtonclicked(${winkelwagen.id})" class="btn btn-primary min m-1">-</button>
-                <button type="button" onclick="addButtonclicked(${winkelwagen.id},${amount})" class="btn btn-success add m-1">+</button>           
+                <button type="button" onclick="minButtonclicked(${winkelwagen.id})" class="btn btn-primary min m-1">-
+                </button>
+                <button type="button" onclick="addButtonclicked(${winkelwagen.id},${amount})" class="btn btn-success add m-1">+
+                </button>           
                 </div>   
                 <hr class="mt-2" />
-                `
+                `;
     inCartdiv.innerHTML = inCartcontent;
     document.getElementById("shoppingCart").append(inCartdiv);
     totaalPrijs();
     const removeCartbuttons = document.getElementsByClassName('rem');
     for (let i = 0; i < removeCartbuttons.length; i++) {
         const button = removeCartbuttons[i];
-        button.addEventListener('click', remButtonclicked)
+        button.addEventListener('click', remButtonclicked);
     }
 
 }
@@ -136,7 +137,7 @@ function remButtonclicked(event) {
 }
 
 
-//geeft de totaalprijs in winkelmand
+// geeft de totaalprijs in winkelmand
 function totaalPrijs() {
     document.getElementById('totaalprijs').innerHTML = "";
     let totaalPrijs = 0;
@@ -151,8 +152,8 @@ function totaalPrijs() {
     const totaalPrijsdiv = document.createElement('div');
     totaalPrijsdiv.classList = "row p-2";
     totaalPrijsdiv.innerHTML = ` 
-    <div class="col d-flex " id="totaalprijs"><h3>Totaalprijs: €${totaalPrijs}</h3></div>`
-    document.getElementById('totaalprijs').append(totaalPrijsdiv)
+    <div class="col d-flex " id="totaalprijs"><h3>Totaalprijs: €${totaalPrijs}</h3></div>`;
+    document.getElementById('totaalprijs').append(totaalPrijsdiv);
     if (totaalPrijs == 0) {
         totaalPrijsdiv.innerHTML = "<h5>Uw winkelwagen is leeg</h5>";
     }
