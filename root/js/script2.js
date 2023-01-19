@@ -87,7 +87,7 @@ function createCart(winkelwagen) {
     const amount = getAmount(winkelwagen);
     const inCartdiv = document.createElement("div");
     inCartdiv.classList = "row d-flex p-3 ";
-    const inCartcontent = `
+    inCartcontent = `
     <p class="hide">${winkelwagen.id}</p>
                 <div class="col-12 col-lg-2 mb-2"><h4 class="cartItem-title">${winkelwagen.name}</h4></div>
                 <div class="col-4 col-lg-2 d-flex"><img src="${src}" class="object-fit-cover border rounded" 
