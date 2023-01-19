@@ -1,5 +1,5 @@
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', loadWebshop)
+    document.addEventListener('DOMContentLoaded', loadWebshop);
 } else {
     loadWebshop();
 }
@@ -29,11 +29,12 @@ function createItem(parsedData) {
                 <h5 class="card-title" id="t${element.id}">${element.name}</h5>
                 <p class="card-text prijs" id="p${element.id}">Prijs: € ${element.prijs}</p>
                 <p class="card-text voorraad hide" id="v${element.id}">${element.amount}</p>
-                <button type="button" class="btn btn-outline-primary add position-relative" id="b${element.id}">Voeg toe aan winkelwagen</button>
+                <button type="button" class="btn btn-outline-primary add position-relative"
+                id="b${element.id}">Voeg toe aan winkelwagen</button>
             </div>
         </div>
     </div>
-`
+`;
         const shoppingItems = document.createElement('div');
         shoppingItems.classList = `col-lg-4 col-md-12 mb-4 shop-item`;
         shoppingItems.innerHTML = shoppingItemscontent
@@ -60,7 +61,7 @@ function reloadButtons() {
 // controleert status winkelwagen
 function checkCart() {
     if ("winkelwagen" in localStorage == true) {
-        const localstoragearray = JSON.parse(localStorage.getItem('winkelwagen'))
+        const localstoragearray = JSON.parse(localStorage.getItem('winkelwagen'));
         adjustElements();
         return localstoragearray;
     } else {

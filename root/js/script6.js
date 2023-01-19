@@ -1,6 +1,6 @@
 // toevoegen van producten
 function submitInput() {
-    const newProd = {}
+    const newProd = {};
     newProd['id'] = document.getElementById('ProductID').value;
     newProd['name'] = document.getElementById('Productnaam').value;
     newProd['prijs'] = document.getElementById('Prijs').value;

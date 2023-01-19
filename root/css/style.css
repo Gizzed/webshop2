@@ -29,7 +29,7 @@ i {
 
 
 html {
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 input::-webkit-outer-spin-button,

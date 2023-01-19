@@ -12,7 +12,7 @@ function fillInput() {
 };
 
 function submitInput() {
-    const newObj = {}
+    const newObj = {};
     newObj['name'] = document.getElementById('Productnaam').value;
     newObj['id'] = document.getElementById('ProductID').value;
     newObj['prijs'] = document.getElementById('Prijs').value;

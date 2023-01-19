@@ -1,7 +1,7 @@
 if ("producten" in localStorage == true) {
-    const parsedData = JSON.parse(localStorage.getItem('producten'))
+    const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const [key, value] of Object.entries(parsedData)) {
-        createProducten(value)
+        createProducten(value);
     }
 }
 
@@ -19,18 +19,18 @@ function createProducten(producten) {
                 <h4><a href="edit-producten.html"><i class="bi bi-pen edit  ps-3" id="e${producten.id}"></i></a></h4> 
                 <h4><i class="bi bi-trash3 rem  ps-3" id="${producten.id}"></i></h4>                            
                 </div>               
-                `
+                `;
     inCartdiv.innerHTML = inCartcontent;
     document.getElementById("producten").append(inCartdiv);
     const remButtons = document.getElementsByClassName('rem');
     for (let i = 0; i < remButtons.length; i++) {
         const button = remButtons[i];
-        button.addEventListener('click', remButtonclicked)
+        button.addEventListener('click', remButtonclicked);
     }
     const editButton = document.getElementById('e' + producten.id);
     editButton.addEventListener('click', () => {
         const id = producten.id;
-        editButtonclicked(id)
+        editButtonclicked(id);
     })
 }
 // edit button actie
