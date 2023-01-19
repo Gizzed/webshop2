@@ -9,7 +9,7 @@ if ("bestelling" in localStorage == true) {
         }
     }
 }
-//tabel maken
+// tabel maken
 function createList(naam, bestelling) {
     const inCartdiv = document.createElement("tr");
     inCartdiv.classList = "";

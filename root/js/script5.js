@@ -1,4 +1,3 @@
-
 fillInput();
 // wijzigen van producten
 function fillInput() {
@@ -8,7 +7,6 @@ function fillInput() {
     document.getElementById('Prijs').value = tempObj.prijs;
     document.getElementById('Voorraad').value = tempObj.amount;
     document.getElementById('Img').value = tempObj.img;
-
 };
 
 function submitInput() {
@@ -36,5 +34,4 @@ function productenEdit(edit) {
             localStorage.removeItem('temp');
         }
     }
-
 }

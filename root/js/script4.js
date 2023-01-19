@@ -5,7 +5,7 @@ if ("producten" in localStorage == true) {
     }
 }
 
-//html producten creëeren
+// html producten creëeren
 function createProducten(producten) {
     const inCartdiv = document.createElement("tr");
     inCartdiv.classList = "";
@@ -69,5 +69,4 @@ async function resetProducten() {
     const data = await response.json();
     localStorage.setItem('producten', JSON.stringify(data));
     location.reload();
-
 }
