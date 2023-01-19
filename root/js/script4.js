@@ -31,11 +31,11 @@ function createProducten(producten) {
     editButton.addEventListener('click', () => {
         const id = producten.id;
         editButtonclicked(id);
-    })
+    });
 }
 // edit button actie
 function editButtonclicked(id) {
-    const parsedData = JSON.parse(localStorage.getItem('producten'))
+    const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const e of parsedData) {
         if (e.id == id) {
             const temp = e;
@@ -68,5 +68,5 @@ async function resetProducten() {
     const response = await fetch(productenJson);
     const data = await response.json();
     localStorage.setItem('producten', JSON.stringify(data));
-    location.reload();
+    window.location.reload();
 }

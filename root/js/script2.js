@@ -143,22 +143,22 @@ function remButtonclicked(event) {
 // geeft de totaalprijs in winkelmand
 function totaalPrijs() {
     document.getElementById('totaalprijs').innerHTML = "";
-    let totaalPrijs = 0.00;
+    let totaalBedrag = 0.00;
     const totaalPrijsarray = JSON.parse(localStorage.getItem('winkelwagen'));
     if (totaalPrijsarray != null && totaalPrijsarray.length > 0) {
         for (const e of totaalPrijsarray) {
-            totaalPrijs += Number(e.prijs) * e.aantal;
+            totaalBedrag += Number(e.prijs) * e.aantal;
         }
     }
     const totaalPrijsdiv = document.createElement('div');
     totaalPrijsdiv.classList = "row p-2";
     totaalPrijsdiv.innerHTML = ` 
-    <div class="col d-flex " id="totaalprijs"><h3>Totaalprijs: €${totaalPrijs}</h3></div>`;
+    <div class="col d-flex " id="totaalprijs"><h3>Totaalprijs: €${totaalBedrag}</h3></div>`;
     document.getElementById('totaalprijs').append(totaalPrijsdiv);
-    if (totaalPrijs == 0.00) {
+    if (totaalBedrag == 0.00) {
         totaalPrijsdiv.innerHTML = "<h5>Uw winkelwagen is leeg</h5>";
     }
-    return totaalPrijs;
+    return totaalBedrag;
 }
 
 // actie na klik op aankoop
@@ -175,7 +175,7 @@ function purchaseClick() {
     } else {
         const bestelling = JSON.parse(localStorage.getItem('bestelling'));
         myObj[naam] = winkelwagen;
-        let newArray = bestelling.concat(myObj);
+        newArray = bestelling.concat(myObj);
         localStorage.setItem('bestelling', JSON.stringify(newArray));
     }
     clearCart();

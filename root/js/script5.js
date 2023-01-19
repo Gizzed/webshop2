@@ -7,7 +7,7 @@ function fillInput() {
     document.getElementById('Prijs').value = tempObj.prijs;
     document.getElementById('Voorraad').value = tempObj.amount;
     document.getElementById('Img').value = tempObj.img;
-};
+}
 
 function submitInput() {
     const newObj = {};
@@ -28,7 +28,7 @@ function productenEdit(edit) {
             e.amount = edit.amount;
             e.name = edit.name;
             e.prijs = edit.prijs;
-            e.img = edit.img
+            e.img = edit.img;
             e.id = edit.id;
             localStorage.setItem('producten', JSON.stringify(parsedData));
             localStorage.removeItem('temp');
