@@ -34,8 +34,9 @@ function imgSrc(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            const src = v.img;            
-        } return src;
+            const src = v.img;  
+            return src;
+        } 
     }
 }
 
@@ -44,8 +45,9 @@ function getAmount(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            const amount = v.amount;            
-        } return amount;
+            const amount = v.amount;    
+            return amount;
+        } 
     }
 }
 
@@ -87,7 +89,7 @@ function createCart(winkelwagen) {
     const amount = getAmount(winkelwagen);
     const inCartdiv = document.createElement("div");
     inCartdiv.classList = "row d-flex p-3 ";
-    inCartcontent = `
+    const inCartcontent = `
     <p class="hide">${winkelwagen.id}</p>
                 <div class="col-12 col-lg-2 mb-2"><h4 class="cartItem-title">${winkelwagen.name}</h4></div>
                 <div class="col-4 col-lg-2 d-flex"><img src="${src}" class="object-fit-cover border rounded" 
