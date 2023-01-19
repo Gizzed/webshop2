@@ -35,7 +35,7 @@ function imgSrc(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            return v.img;            
+            return v.img;
         }
     } return 0;
 }
@@ -45,7 +45,7 @@ function getAmount(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            return v.amount;            
+            return v.amount;
         }
     } return 0;
 }
