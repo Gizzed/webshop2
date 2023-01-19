@@ -32,6 +32,16 @@ html {
   overflow-y: overlay;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
 /* Deze css heb ik geleend (zorg ervoor dat de tabellen ook responsive zijn)*/
 table {
   border: 1px solid #ccc;
@@ -111,8 +121,3 @@ table th {
 }
 
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
