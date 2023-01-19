@@ -9,7 +9,7 @@ if ("producten" in localStorage == true) {
 function createProducten(producten) {
     const inCartdiv = document.createElement("tr");
     inCartdiv.classList = "";
-    inCartcontent = `                
+    const inCartcontent = `                
                 <td class="ps-3" data-label="Product ID">${producten.id}</td>
                 <td class="ps-3" data-label="Productnaam">${producten.name}</td>                
                 <td class="ps-3" data-label="Prijs">${producten.prijs}</td>  
