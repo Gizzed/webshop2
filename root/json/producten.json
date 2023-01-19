@@ -2,14 +2,14 @@
     {
         "id": "1",
         "name": "Caputo Nuvola 1kg",
-        "prijs": "3,79",
+        "prijs": "3.79",
         "amount": 1,
         "img": "../img/Caputo-Nuvola-1kg-400x320.jpg"
     },
     {
         "id": "2",
         "name": "Caputo Chef Cuoco 1kg",
-        "prijs": "2,55",
+        "prijs": "2.55",
         "amount": 100,
         "img": "../img/Caputo_chef_cuoco_1kg-400x320.webp"
     },
@@ -23,21 +23,21 @@
     {
         "id": "5",
         "name": "Caputo Semola 5kg",
-        "prijs": "15,95",
+        "prijs": "15.95",
         "amount": 3,
         "img": "../img/Caputo_semola_5kg-400x320.webp"
     },
     {
         "id": "40",
         "name": "Caputo Manitoba 5kg",
-        "prijs": "15,05",
+        "prijs": "15.05",
         "amount": 5,
         "img": "../img/Caputo_manitoba_5kg-400x320.webp"
     },
     {
         "id": "50",
         "name": "Bloem Tipo1 Caputo 1kg",
-        "prijs": "2,69",
+        "prijs": "2.69",
         "amount": 1,
         "img": "../img/bloem_tipo1_caputo-400x320.jpg"
     }    
