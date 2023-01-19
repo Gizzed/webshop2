@@ -39,9 +39,10 @@ input::-webkit-inner-spin-button {
 }
 
 .responsive {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
+
 /* Deze css heb ik geleend (zorg ervoor dat de tabellen ook responsive zijn)*/
 table {
   border: 1px solid #ccc;
