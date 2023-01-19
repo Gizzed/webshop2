@@ -28,15 +28,16 @@ document.getElementById("bestelNaam").addEventListener('change', () => {
         document.getElementById('bestelKnop').setAttribute("type", "submit");
         document.getElementById('bestelKnop').addEventListener('click', purchaseClick);
     }
-})
+});
+
 // voor de img src
 function imgSrc(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            const src = v.img;  
+            const src = v.img;
             return src;
-        } 
+        }
     }
 }
 
@@ -45,9 +46,9 @@ function getAmount(winkelwagen) {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     for (const v of parsedData) {
         if (winkelwagen.id == v.id) {
-            const amount = v.amount;    
+            const amount = v.amount;
             return amount;
-        } 
+        }
     }
 }
 
@@ -97,13 +98,16 @@ function createCart(winkelwagen) {
                 <div class="col-4 col-lg-2"><h6 class="cartItem-prijs">Prijs: €${winkelwagen.prijs}</h6></div>    
                 <div class="col-6 col-lg-2"><h6 id="a${winkelwagen.id}">Aantal: ${winkelwagen.aantal}</h6><i>
                 (Op voorraad: ${amount})</i></div>    
-                <div class="col-6 col-lg-2"><span id="ta${winkelwagen.id}">Totaal: €${winkelwagen.prijs * winkelwagen.aantal}
+                <div class="col-6 col-lg-2"><span id="ta${winkelwagen.id}">Totaal: 
+                €${winkelwagen.prijs * winkelwagen.aantal}
                 </span></div>                   
                 <div class="col-6 col-lg-2"><h4><i class="bi bi-trash3 rem m-1"></i></h4></div>                  
                 <div class="d-flex col-12 mt-2 justify-content-start">  
-                <button type="button" onclick="minButtonclicked(${winkelwagen.id})" class="btn btn-primary min m-1">-
+                <button type="button" onclick="minButtonclicked(${winkelwagen.id})" 
+                class="btn btn-primary min m-1">-
                 </button>
-                <button type="button" onclick="addButtonclicked(${winkelwagen.id},${amount})" class="btn btn-success add m-1">+
+                <button type="button" onclick="addButtonclicked(${winkelwagen.id},${amount})" 
+                class="btn btn-success add m-1">+
                 </button>           
                 </div>   
                 <hr class="mt-2" />
@@ -116,7 +120,6 @@ function createCart(winkelwagen) {
         const button = removeCartbuttons[i];
         button.addEventListener('click', remButtonclicked);
     }
-
 }
 // verwijderknoppen
 function remButtonclicked(event) {
@@ -146,8 +149,6 @@ function totaalPrijs() {
         for (const e of totaalPrijsarray) {
             totaalPrijs += Number(e.prijs) * e.aantal;
         }
-    } else {
-        totaalPrijs = 0;
     }
     const totaalPrijsdiv = document.createElement('div');
     totaalPrijsdiv.classList = "row p-2";
@@ -160,12 +161,12 @@ function totaalPrijs() {
     return totaalPrijs;
 }
 
-//actie na klik op aankoop
+// actie na klik op aankoop
 function purchaseClick() {
     veranderVoorraad();
     const naam = bestelNaam();
     const myObj = {};
-    const newArray = [];
+    let newArray = [];
     const winkelwagen = JSON.parse(localStorage.getItem('winkelwagen'));
     if ("bestelling" in localStorage == false) {
         myObj[naam] = winkelwagen;
@@ -174,13 +175,13 @@ function purchaseClick() {
     } else {
         const bestelling = JSON.parse(localStorage.getItem('bestelling'));
         myObj[naam] = winkelwagen;
-        const newArray = bestelling.concat(myObj);
+        let newArray = bestelling.concat(myObj);
         localStorage.setItem('bestelling', JSON.stringify(newArray));
     }
     clearCart();
 }
 
-//leegt de localstorage/winkelwagen
+// leegt de localstorage/winkelwagen
 function clearCart() {
     const cart = document.getElementById('shoppingCart');
     while (cart.hasChildNodes()) {
@@ -191,14 +192,14 @@ function clearCart() {
     totaalPrijs();
 }
 
-//stukje voorraad beheer
+// stukje voorraad beheer
 function veranderVoorraad() {
     const parsedData = JSON.parse(localStorage.getItem('producten'));
     const bestelling = JSON.parse(localStorage.getItem('winkelwagen'));
     for (const v of parsedData) {
         for (const b of bestelling) {
             if (b.id == v.id) {
-                v.amount -= b.aantal
+                v.amount -= b.aantal;
                 localStorage.setItem('producten', JSON.stringify(parsedData));
             }
         }
@@ -207,7 +208,7 @@ function veranderVoorraad() {
 
 
 
-//naam voor bij de bestelling
+// naam voor bij de bestelling
 function bestelNaam() {
     console.log(document.getElementById('bestelNaam').value);
     const naam = document.getElementById('bestelNaam').value;

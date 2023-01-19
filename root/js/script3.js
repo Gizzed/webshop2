@@ -13,7 +13,7 @@ if ("bestelling" in localStorage == true) {
 function createList(naam, bestelling) {
     const inCartdiv = document.createElement("tr");
     inCartdiv.classList = "";
-    inCartcontent = `
+    const inCartcontent = `
                 <td class="ps-3">${naam}</td>                
                 <td class="ps-3" id="id" data-label="Product ID">${bestelling.id}</td>
                 <td class="ps-3" data-label="Productnaam">${bestelling.name}</td>                
@@ -24,7 +24,6 @@ function createList(naam, bestelling) {
                 `;
     inCartdiv.innerHTML = inCartcontent;
     document.getElementById("bestellingen").append(inCartdiv);
-
 }
 
 
