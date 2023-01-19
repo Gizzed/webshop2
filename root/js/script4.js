@@ -14,7 +14,7 @@ function createProducten(producten) {
                 <td class="ps-3" data-label="Productnaam">${producten.name}</td>                
                 <td class="ps-3" data-label="Prijs">${producten.prijs}</td>  
                 <td class="ps-3" data-label="Voorraad">${producten.amount}</td>   
-                <td class="ps-3" data-label="Prijs">${producten.img}</td> 
+                <td class="ps-3" data-label="Img">${producten.img}</td> 
                 <div class="d-flex p-2 justify-content-end">
                 <h4><a href="edit-producten.html"><i class="bi bi-pen edit  ps-3" id="e${producten.id}"></i></a></h4> 
                 <h4><i class="bi bi-trash3 rem  ps-3" id="${producten.id}"></i></h4>                            

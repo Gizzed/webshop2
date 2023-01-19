@@ -3,7 +3,7 @@ fillInput();
 // wijzigen van producten
 function fillInput() {
     const tempObj = JSON.parse(localStorage.getItem('temp'));
-    document.getElementById('Product ID').value = tempObj.id;
+    document.getElementById('ProductID').value = tempObj.id;
     document.getElementById('Productnaam').value = tempObj.name;
     document.getElementById('Prijs').value = tempObj.prijs;
     document.getElementById('Voorraad').value = tempObj.amount;
@@ -14,7 +14,7 @@ function fillInput() {
 function submitInput() {
     const newObj = {}
     newObj['name'] = document.getElementById('Productnaam').value;
-    newObj['id'] = document.getElementById('Product ID').value;
+    newObj['id'] = document.getElementById('ProductID').value;
     newObj['prijs'] = document.getElementById('Prijs').value;
     newObj['amount'] = document.getElementById('Voorraad').value;
     newObj['img'] = document.getElementById('Img').value;
