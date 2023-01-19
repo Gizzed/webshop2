@@ -143,7 +143,7 @@ function remButtonclicked(event) {
 // geeft de totaalprijs in winkelmand
 function totaalPrijs() {
     document.getElementById('totaalprijs').innerHTML = "";
-    let totaalPrijs = 0;
+    let totaalPrijs = 0.0;
     const totaalPrijsarray = JSON.parse(localStorage.getItem('winkelwagen'));
     if (totaalPrijsarray != null && totaalPrijsarray.length > 0) {
         for (const e of totaalPrijsarray) {
@@ -155,7 +155,7 @@ function totaalPrijs() {
     totaalPrijsdiv.innerHTML = ` 
     <div class="col d-flex " id="totaalprijs"><h3>Totaalprijs: €${totaalPrijs}</h3></div>`;
     document.getElementById('totaalprijs').append(totaalPrijsdiv);
-    if (totaalPrijs == 0) {
+    if (totaalPrijs == 0.0) {
         totaalPrijsdiv.innerHTML = "<h5>Uw winkelwagen is leeg</h5>";
     }
     return totaalPrijs;
