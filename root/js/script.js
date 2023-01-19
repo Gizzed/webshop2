@@ -88,7 +88,7 @@ function addCart(event) {
     const addButton = event.target;
     const shopItem = addButton.parentElement;
     const title = shopItem.getElementsByClassName('card-title')[0].innerText;
-    const prijsItem = shopItem.getElementsByClassName('prijs')[0].innerText;
+    const prijsItem = parseFloat(shopItem.getElementsByClassName('prijs')[0].innerText);
     const prijs = parseFloat(prijsItem.replace('Prijs: €', ''));
     const artikel = shopItem.getElementsByClassName('artikel')[0].innerText;
     const localstoragearray = checkCart();
